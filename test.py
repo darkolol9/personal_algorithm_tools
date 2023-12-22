@@ -1,15 +1,18 @@
 from times import time_execution
+from primes import get_prime_factors, is_prime
+
+
+
+
 
 
 
 @time_execution
-def scream():
-    for i in range(100000):
-        pass
+def sol():
+    print(is_prime(133939153441))
 
 
 
 
 
-
-scream()
+sol()
