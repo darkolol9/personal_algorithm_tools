@@ -1,3 +1,5 @@
+from random import random
+
 
 class Graph:
     def __init__(self, vertices):
@@ -13,20 +15,34 @@ class Graph:
         self.vertices = vertices
         self.graph = [[0 for column in range(vertices)]
                       for row in range(vertices)]
+        
+        self.edges = 0
 
     def add_edge(self, v1, v2):
         self.graph[v1][v2] = 1
         self.graph[v2][v1] = 1
+        self.edges += 1
 
     def remove_edge(self, v1, v2):
         self.graph[v1][v2] = 0
         self.graph[v2][v1] = 0
+        self.edges -= 1
 
     def is_edge(self, v1, v2):
         return self.graph[v1][v2]
     
     def neighbors(self, v):
         return [i for i, x in enumerate(self.graph[v]) if x == 1]
+    
+
+    def randomize_edges(self, chance = 0.5):
+        for i in range(self.vertices):
+            for j in range(i):
+                if (random() < chance):
+                    self.add_edge(i, j)
+                    self.edges += 1
+
+    
     
 
 
@@ -75,6 +91,7 @@ def dfs(graph: Graph, start_vertex:int):
             distances[u] = distances[start_vertex] + 1
             dfs_visit(graph, u, colors, distances)
 
+    colors[start_vertex] = "black"
     return distances, colors
 
 
