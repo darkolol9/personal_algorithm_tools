@@ -1,6 +1,15 @@
 
 class Graph:
     def __init__(self, vertices):
+        """
+        Initializes a new instance of a graph
+
+        Parameters:
+            vertices (int): The number of vertices in the graph.
+
+        Returns:
+            None
+        """
         self.vertices = vertices
         self.graph = [[0 for column in range(vertices)]
                       for row in range(vertices)]
