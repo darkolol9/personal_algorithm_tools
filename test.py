@@ -9,7 +9,7 @@ from primes import get_prime_factors, is_prime
 
 @time_execution
 def sol():
-    print(is_prime(133939153441))
+    print(list(get_prime_factors(133939153441)))
 
 
 

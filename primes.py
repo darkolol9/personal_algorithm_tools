@@ -47,13 +47,13 @@ def get_first_n_primes(n):
     Returns:
         list: A list of the first n prime numbers.
     """
-    primes = []
+    count = 0
     num = 2
-    while len(primes) < n:
+    while count < n:
         if is_prime(num):
-            primes.append(num)
+            yield num
         num += 1
-    return primes
+  
 
 
 def get_prime_factors(n):
@@ -70,10 +70,10 @@ def get_prime_factors(n):
     num = 2
     while num * num <= n:
         if n % num == 0:
-            factors.append(num)
+            yield num
             n //= num
         else:
             num += 1
     if n > 1:
-        factors.append(n)
+        yield n
     return factors
