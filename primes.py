@@ -37,7 +37,7 @@ def get_nth_prime(n):
     return num
 
 
-def get_first_n_primes(n):
+def get_first_n_primes(n: int):
     """
     Get the first n prime numbers.
 
@@ -56,7 +56,7 @@ def get_first_n_primes(n):
   
 
 
-def get_prime_factors(n):
+def get_prime_factors(n: int):
     """
     Get the prime factors of a number.
 
