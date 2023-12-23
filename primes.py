@@ -66,14 +66,27 @@ def get_prime_factors(n: int):
     Returns:
         list: A list of the prime factors of the number.
     """
+    powers = {}
     factors = []
     num = 2
     while num * num <= n:
         if n % num == 0:
-            yield num
+
+            if num not in powers:
+                factors.append(num)
+                powers[num] = 1
+            else:
+                powers[num] += 1
+                
             n //= num
         else:
             num += 1
     if n > 1:
-        yield n
-    return factors
+
+        if num not in powers:
+                factors.append(num)
+                powers[num] = 1
+        else:
+            powers[num] += 1
+
+    return factors, powers

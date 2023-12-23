@@ -16,20 +16,12 @@ from graphs import Graph, dfs, bfs
 
 
 
-@time_execution
-def build():
-    graph = Graph(5000)
-    graph.randomize_edges(0.01)
-    return graph
 
 @time_execution
-def sol(g):
-    distances, colors = bfs(g, 0)
-    print(g.edges)
+def sol():
+    a, b = get_prime_factors(13**4 * 2**5)
+    print(a,b)
+    
 
 
-
-
-
-g = build()
-sol(g)
+sol()
