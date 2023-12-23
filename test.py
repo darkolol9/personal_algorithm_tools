@@ -17,13 +17,11 @@ from graphs import Graph, dfs
 
 @time_execution
 def sol():
-    g1 = Graph(100)
-    g1.randomize_edges(0.01)
+    graph = Graph(5)
+    graph.randomize_edges(2)
 
-    print(dfs(g1, 0), g1.edges)
-
-
-    # print(list(get_prime_factors(133939153441)))
+    distances, colors = dfs(graph, 0)
+    print(distances, graph.edges)
 
 
 

@@ -29,7 +29,7 @@ class Graph:
         self.edges -= 1
 
     def is_edge(self, v1, v2):
-        return self.graph[v1][v2]
+        return self.graph[v1][v2] or self.graph[v2][v1]
     
     def neighbors(self, v):
         return [i for i, x in enumerate(self.graph[v]) if x == 1]
@@ -38,9 +38,8 @@ class Graph:
     def randomize_edges(self, chance = 0.5):
         for i in range(self.vertices):
             for j in range(i):
-                if (random() < chance):
+                if (random() < chance and not self.is_edge(i, j)):
                     self.add_edge(i, j)
-                    self.edges += 1
 
     
     
