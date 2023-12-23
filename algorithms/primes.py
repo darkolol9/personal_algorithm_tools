@@ -30,11 +30,14 @@ def get_nth_prime(n):
     """
     count = 0
     num = 2
+    lastPrime = 2
     while count < n:
         if is_prime(num):
             count += 1
+            lastPrime = num
         num += 1
-    return num
+        
+    return lastPrime
 
 
 def get_first_n_primes(n: int):
@@ -77,7 +80,7 @@ def get_prime_factors(n: int):
                 powers[num] = 1
             else:
                 powers[num] += 1
-                
+
             n //= num
         else:
             num += 1
