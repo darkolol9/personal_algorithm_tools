@@ -15,6 +15,7 @@ class Graph:
         self.vertices = vertices
         self.graph = [[0 for column in range(vertices)]
                       for row in range(vertices)]
+        self.neighbors = {}
         
         self.edges = 0
 
@@ -23,16 +24,26 @@ class Graph:
         self.graph[v2][v1] = 1
         self.edges += 1
 
+        if (v1 not in self.neighbors):
+            self.neighbors[v1] = [v2]
+        else:
+            self.neighbors[v1].append(v2)
+
+        if (v2 not in self.neighbors):
+            self.neighbors[v2] = [v1]
+        else:
+            self.neighbors[v2].append(v1)
+
     def remove_edge(self, v1, v2):
         self.graph[v1][v2] = 0
         self.graph[v2][v1] = 0
         self.edges -= 1
 
+        self.neighbors[v1].remove(v2)
+        self.neighbors[v2].remove(v1)
+
     def is_edge(self, v1, v2):
         return self.graph[v1][v2] or self.graph[v2][v1]
-    
-    def neighbors(self, v):
-        return [i for i, x in enumerate(self.graph[v]) if x == 1]
     
 
     def randomize_edges(self, chance = 0.5):
@@ -41,8 +52,39 @@ class Graph:
                 if (random() < chance and not self.is_edge(i, j)):
                     self.add_edge(i, j)
 
-    
-    
+
+
+
+def bfs(G: Graph, start: int):
+    """
+    Perform a breadth-first search (BFS) on a given graph starting from a specified vertex.
+
+    Parameters:
+        G (Graph): The graph to perform BFS on.
+        start (int): The starting vertex for the BFS.
+
+    Returns:
+        tuple: A tuple containing two dictionaries:
+            - distances (dict): A dictionary mapping each vertex to its distance from the starting vertex.
+            - colors (dict): A dictionary mapping each vertex to its color (white, gray, or black) during the BFS.
+    """
+    colors = {v: "white" for v in range(G.vertices)}
+    distances = {v: None for v in range(G.vertices)}
+
+    colors[start] = "gray"
+    distances[start] = 0
+
+    queue = [start]    
+    while (len(queue)):
+        v = queue.pop(0)
+        for u in G.neighbors[v]:
+            if colors[u] == 'white':
+                colors[u] = 'gray'
+                distances[u] = distances[v] + 1
+                queue.append(u)
+        colors[v] = 'black'
+
+    return distances, colors
 
 
 def dfs_visit(graph: Graph, start: int, colors, distances):

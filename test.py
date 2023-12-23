@@ -1,6 +1,7 @@
 from times import time_execution
 from primes import get_prime_factors, is_prime
-from graphs import Graph, dfs
+from graphs import Graph, dfs, bfs
+
 
 
 
@@ -16,15 +17,18 @@ from graphs import Graph, dfs
 
 
 @time_execution
-def sol():
-    graph = Graph(5)
+def build():
+    graph = Graph(5000)
     graph.randomize_edges(2)
+    return graph
 
-    distances, colors = dfs(graph, 0)
-    print(distances, graph.edges)
+@time_execution
+def sol(g):
+    distances, colors = bfs(g, 0)
 
 
 
 
 
-sol()
+g = build()
+# sol(g)
