@@ -20,6 +20,16 @@ class Graph:
         self.edges = 0
 
     def add_edge(self, v1, v2):
+        """
+        Adds an edge between two vertices in the graph.
+
+        Parameters:
+            v1 (int): The first vertex.
+            v2 (int): The second vertex.
+
+        Returns:
+            None
+        """
         self.graph[v1][v2] = 1
         self.graph[v2][v1] = 1
         self.edges += 1
@@ -47,6 +57,16 @@ class Graph:
     
 
     def randomize_edges(self, chance = 0.5):
+        """
+        Randomizes the edges of the graph with a given chance.
+
+        Parameters:
+            chance (float): The probability of adding an edge between two vertices.
+                Defaults to 0.5.
+
+        Returns:
+            None
+        """
         for i in range(self.vertices):
             for j in range(i):
                 if (random() < chance and not self.is_edge(i, j)):
