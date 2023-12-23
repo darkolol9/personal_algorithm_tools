@@ -20,7 +20,6 @@ def sol():
     g1 = Graph(100)
     g1.randomize_edges(0.01)
 
-
     print(dfs(g1, 0), g1.edges)
 
 
