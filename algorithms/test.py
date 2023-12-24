@@ -6,9 +6,10 @@ from graphs import Graph, dfs, bfs
 
 @time_execution
 def sol():
-    a = get_nth_prime(60)
-    print(is_prime(a))
+    print(1/111)
     
+
+    print("ha" * 6)
 
 
 sol()
