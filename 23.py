@@ -1,4 +1,4 @@
-from _numbers import get_proper_divisors
+from algorithms._numbers import get_proper_divisors
 from algorithms.primes import get_nth_prime, is_prime
 from algorithms.times import time_execution
 from algorithms.graphs import *
