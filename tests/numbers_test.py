@@ -10,5 +10,5 @@ def test_gcd():
 
 
 def test_get_proper_divisors():
-    assert get_proper_divisors(15) == [1, 3, 5, 15]
+    assert get_proper_divisors(15) == [1, 3, 5]
 
