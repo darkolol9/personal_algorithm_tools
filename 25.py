@@ -1,8 +1,6 @@
 from algorithms.times import time_execution
 from functools import lru_cache
 
-
-
 @lru_cache
 def fib(n):
     if n < 3:
@@ -12,21 +10,12 @@ def fib(n):
 
 
 
-
-
-
 @time_execution
 def sol():
     i = 5
-
-
     while len(str(fib(i))) < 1000:
         i += 1
-
-
     print(i)
-
-
 
 
 sol()
