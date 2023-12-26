@@ -55,6 +55,7 @@ def get_first_n_primes(n: int):
     while count < n:
         if is_prime(num):
             yield num
+            count += 1
         num += 1
   
 
