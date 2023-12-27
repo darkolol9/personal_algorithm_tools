@@ -73,9 +73,8 @@ def get_prime_factors(n: int):
     powers = {}
     factors = []
     num = 2
-    while num * num <= n:
+    while num <= n:
         if n % num == 0:
-
             if num not in powers:
                 factors.append(num)
                 powers[num] = 1
