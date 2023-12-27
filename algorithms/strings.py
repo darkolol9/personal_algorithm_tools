@@ -22,3 +22,15 @@ def does_word_divide(a, b):
         
     return False
 
+
+def is_palindrome(word):
+    """
+    Check if a word is a palindrome.
+
+    Args:
+        word (str): The word to check if it is a palindrome.
+
+    Returns:
+        bool: True if the word is a palindrome, False otherwise.
+    """
+    return word == word[::-1]

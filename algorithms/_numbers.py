@@ -33,3 +33,16 @@ def gcd(a, b):
         return a
     
     return gcd(b, a % b)
+
+
+def get_in_binary(n):
+    """
+    Get the binary representation of a number.
+
+    Args:
+        n (int): The number to be converted.
+
+    Returns:
+        str: The binary representation of the number.
+    """
+    return bin(n)[2:]
