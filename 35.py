@@ -55,8 +55,5 @@ def f():
     print(count)
 
 f()
-# primes = list(get_first_n_primes(1e6))
 
-# for prime in primes:
-#     print(prime)
 
