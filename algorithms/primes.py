@@ -2,6 +2,23 @@
 
 from math import sqrt
 
+
+def get_prime_up_to_n(n):
+    """
+    Get the prime numbers up to a given number.
+
+    Args:
+        n (int): The number to get the prime numbers up to.
+
+    Returns:
+        list: A list of the prime numbers up to the given number.
+    """
+    primes = []
+    for i in range(2, n + 1):
+        if is_prime(i):
+            primes.append(i)
+    return primes
+
 def is_prime(n):
     """
     Check if a number is prime.

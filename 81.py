@@ -27,7 +27,7 @@ def solve(i, j):
 	left = 1e6
 	up = 1e6
 
-	if is_valid_coord(i+1, j):
+	if is_valid_coord(i + 1, j):
 		down = solve(i + 1, j)
 
 	if is_valid_coord(i, j + 1):
