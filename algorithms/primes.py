@@ -3,6 +3,32 @@
 from math import sqrt
 
 
+
+
+def eratosthenes(n):
+    primes = []
+    composite = {}
+    p = 2
+
+    while p <= n:
+        t = p * 2
+
+        while t <= n:
+            composite[t] = True
+            t += p
+
+        p += 1
+        while p in composite:
+            p += 1
+
+
+    for i in range(2,n + 1):
+        if i not in composite:
+            primes.append(i)
+
+    return primes 
+
+
 def get_prime_up_to_n(n):
     """
     Get the prime numbers up to a given number.
