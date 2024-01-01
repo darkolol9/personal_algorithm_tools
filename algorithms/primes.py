@@ -1,11 +1,19 @@
 
-
 from math import sqrt
 
 
 
 
 def eratosthenes(n):
+    """
+    Generates a list of prime numbers up to a given number.
+
+    Parameters:
+    - n (int): The upper limit of the range to generate prime numbers.
+
+    Returns:
+    - primes (List[int]): A list of prime numbers up to the given number.
+    """
     primes = []
     composite = {}
     p = 2
