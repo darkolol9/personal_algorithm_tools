@@ -14,8 +14,7 @@ def f():
     numbers_seen = 21780
 
     while bouncy_numbers / numbers_seen < 0.99:
-        if (numbers_seen % 1000) == 0:
-            print(bouncy_numbers / numbers_seen)
+
         if is_bouncy(numbers_seen):
             bouncy_numbers += 1
         numbers_seen += 1
