@@ -39,6 +39,7 @@ def eratosthenes(n):
 
 def get_prime_up_to_n(n):
     """
+    THIS IS THE SLOW VERSION, PLEASE REFFERE TO eratosthenes method for O(n log log n)
     Get the prime numbers up to a given number.
 
     Args:
