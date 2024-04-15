@@ -22,7 +22,7 @@ def f():
             a = get_nth_pentagonal(j)
             b = get_nth_pentagonal(i)
 
-            if a + b in pentagonalD:
+            if abs(a + b) in pentagonalD:
                 if a - b in pentagonalD:
                     print('yay')
                     if abs(a - b) < minD:
