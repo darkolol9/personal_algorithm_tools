@@ -38,7 +38,6 @@ def get_number_perms(n):
 @time_execution
 def f():
     cands = []
-    digs = list(range(10))
     for num in range(1000, 10000):
         if is_prime(num):
             perms = get_number_perms(num)
