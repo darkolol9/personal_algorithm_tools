@@ -1,7 +1,5 @@
 from algorithms.times import time_execution
 
-
-
 def generate_increasing_until(n, curr = '1', ans = {"count": 0}):
     '''this function is bad'''
     if int(curr) >= n:
@@ -13,11 +11,10 @@ def generate_increasing_until(n, curr = '1', ans = {"count": 0}):
             generate_increasing_until(n, curr + str(i), ans)
 
 
-
 @time_execution
 def sol():
-    LIMIT = 7
 
+    LIMIT = 7
     total = 0
 
     for lens in range(3, LIMIT):
@@ -29,8 +26,5 @@ def sol():
                     total += ((9 ** (lens - 3)) * (dig) * (dig))
         
     print((10 ** (LIMIT - 1)) - total)
-
-
-
 
 sol()
