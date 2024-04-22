@@ -1,5 +1,4 @@
 from algorithms.times import time_execution
-from algorithms.strings import does_word_divide
 
 
 @time_execution
